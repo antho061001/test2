@@ -40,19 +40,30 @@
       font-weight: bold;
       text-align: center;
       border-right: 1px solid black;
+      cursor: pointer;
     }
 
-    nav a {
-      padding: 30px;
-      text-align: center;
-      text-decoration: none;
+    nav button {
+      background: white;
       color: black;
+      border: none;
       border-right: 1px solid black;
+      padding: 30px;
       font-size: 16px;
+      cursor: pointer;
     }
 
-    nav a:hover {
+    nav button:hover,
+    nav button.active {
       background: #ccff00;
+    }
+
+    .categorie {
+      display: none;
+    }
+
+    .categorie.active {
+      display: block;
     }
 
     .hero {
@@ -133,7 +144,8 @@
       margin: 12px 0 !important;
     }
 
-    button {
+    .produit button,
+    .contact button {
       background: black;
       color: white;
       border: none;
@@ -142,7 +154,8 @@
       font-weight: bold;
     }
 
-    button:hover {
+    .produit button:hover,
+    .contact button:hover {
       background: #ccff00;
       color: black;
     }
@@ -180,7 +193,8 @@
         grid-template-columns: 1fr;
       }
 
-      .logo, nav a {
+      .logo,
+      nav button {
         border-right: none;
         border-bottom: 1px solid black;
       }
@@ -207,25 +221,27 @@
 </div>
 
 <nav>
-  <div class="logo">BOUT-S</div>
-  <a href="#nouveau">Nouveau</a>
-  <a href="#femmes">Femmes</a>
-  <a href="#hommes">Hommes</a>
-  <a href="#contact">Contact</a>
+  <div class="logo" onclick="afficherCategorie('accueil')">BOUT-S</div>
+  <button onclick="afficherCategorie('nouveau')">Nouveau</button>
+  <button onclick="afficherCategorie('femmes')">Femmes</button>
+  <button onclick="afficherCategorie('hommes')">Hommes</button>
+  <button onclick="afficherCategorie('contact')">Contact</button>
 </nav>
 
-<div class="hero">
-  <h1>BOUT-S</h1>
-  <p>À chacun le sien</p>
-</div>
+<section id="accueil" class="categorie active">
+  <div class="hero">
+    <h1>BOUT-S</h1>
+    <p>À chacun le sien</p>
+  </div>
 
-<div class="images-accueil">
-  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Mode femme">
-  <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234" alt="T-shirt">
-  <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Mode homme">
-</div>
+  <div class="images-accueil">
+    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Mode femme">
+    <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234" alt="T-shirt">
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Mode homme">
+  </div>
+</section>
 
-<section id="nouveau">
+<section id="nouveau" class="categorie">
   <h2>Nouveau</h2>
 
   <div class="produits">
@@ -247,7 +263,7 @@
   </div>
 </section>
 
-<section id="femmes">
+<section id="femmes" class="categorie">
   <h2>Femmes</h2>
 
   <div class="produits">
@@ -269,7 +285,7 @@
   </div>
 </section>
 
-<section id="hommes">
+<section id="hommes" class="categorie">
   <h2>Hommes</h2>
 
   <div class="produits">
@@ -291,7 +307,7 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="categorie">
   <h2>Contact</h2>
 
   <div class="contact">
@@ -305,6 +321,32 @@
 <footer>
   <p>© 2026 BOUT-S - Tous droits réservés</p>
 </footer>
+
+<script>
+  function afficherCategorie(id) {
+    const categories = document.querySelectorAll('.categorie');
+    const boutons = document.querySelectorAll('nav button');
+
+    categories.forEach(categorie => {
+      categorie.classList.remove('active');
+    });
+
+    boutons.forEach(bouton => {
+      bouton.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    if (event && event.target.tagName === 'BUTTON') {
+      event.target.classList.add('active');
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
 </body>
 </html>
