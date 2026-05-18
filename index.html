@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site internet</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e90ff, #0066cc);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+    }
+
+    nav {
+      background: #222;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1e90ff;
+    }
+
+    button {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0066cc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 35px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      section {
+        margin: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bienvenue sur mon site</h1>
+  <p>Mon premier site internet moderne en HTML/CSS</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#apropos">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="accueil">
+  <h2>Accueil</h2>
+  <p>Bienvenue sur mon site gratuit créé avec HTML et CSS.</p>
+  <br>
+  <button onclick="alert('Merci pour votre visite !')">
+    Me contacter
+  </button>
+</section>
+
+<section id="apropos">
+  <h2>À propos</h2>
+  <p>
+    Ici tu peux parler de toi, ton serveur FiveM,
+    ton entreprise, tes projets ou tes services.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email : tonemail@example.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Mon site internet - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
