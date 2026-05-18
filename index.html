@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique Moderne</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOUT-S</title>
 
   <style>
     * {
@@ -14,150 +14,187 @@
     }
 
     body {
-      background: #f4f6f8;
-      color: #222;
+      background: white;
+      color: black;
     }
 
-    header {
-      background: linear-gradient(135deg, #111827, #2563eb);
+    .promo {
+      background: black;
       color: white;
-      padding: 70px 20px;
       text-align: center;
-    }
-
-    header h1 {
-      font-size: 45px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 18px;
+      padding: 12px;
+      font-size: 14px;
     }
 
     nav {
-      background: #111827;
-      padding: 15px;
+      display: grid;
+      grid-template-columns: 250px 1fr 160px 160px 160px;
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+    }
+
+    .logo {
+      background: #ccff00;
+      padding: 25px;
+      font-size: 26px;
+      font-weight: bold;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      border-right: 1px solid black;
     }
 
     nav a {
-      color: white;
+      padding: 30px;
+      text-align: center;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      color: black;
+      border-right: 1px solid black;
+      font-size: 16px;
     }
 
     nav a:hover {
-      color: #60a5fa;
+      background: #ccff00;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      background: #ccff00;
+      display: inline-block;
+      padding: 5px 80px;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .images-accueil {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 10px;
+      padding: 30px 0;
+    }
+
+    .images-accueil img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
     }
 
     section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
+      padding: 60px 40px;
     }
 
     h2 {
-      margin-bottom: 25px;
-      font-size: 30px;
-      color: #111827;
       text-align: center;
+      font-size: 42px;
+      margin-bottom: 35px;
     }
 
     .produits {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 25px;
     }
 
     .produit {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
       text-align: center;
-      transition: 0.3s;
-    }
-
-    .produit:hover {
-      transform: translateY(-8px);
+      padding-bottom: 20px;
+      background: white;
     }
 
     .produit img {
       width: 100%;
-      height: 180px;
+      height: 280px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
     }
 
     .produit h3 {
-      margin-bottom: 10px;
-      color: #2563eb;
+      margin: 15px 0 8px;
+      font-size: 20px;
+    }
+
+    .produit p {
+      margin: 5px 15px;
+      color: #555;
     }
 
     .prix {
-      font-size: 20px;
+      color: black !important;
       font-weight: bold;
-      margin: 10px 0;
+      font-size: 20px;
+      margin: 12px 0 !important;
     }
 
     button {
-      background: #2563eb;
+      background: black;
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 13px 25px;
       cursor: pointer;
-      transition: 0.3s;
+      font-weight: bold;
     }
 
     button:hover {
-      background: #1d4ed8;
+      background: #ccff00;
+      color: black;
     }
 
     .contact {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      max-width: 700px;
+      max-width: 650px;
       margin: auto;
+      border: 1px solid black;
+      padding: 30px;
     }
 
     .contact input,
     .contact textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid black;
+      font-size: 16px;
     }
 
     .contact textarea {
-      height: 120px;
+      height: 130px;
       resize: none;
     }
 
     footer {
-      background: #111827;
+      background: black;
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: 40px;
     }
 
-    @media(max-width: 768px) {
-      header h1 {
-        font-size: 32px;
+    @media(max-width: 800px) {
+      nav {
+        grid-template-columns: 1fr;
       }
 
-      nav a {
-        display: block;
-        margin: 10px 0;
+      .logo, nav a {
+        border-right: none;
+        border-bottom: 1px solid black;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        padding: 5px 30px;
+      }
+
+      .images-accueil {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -165,87 +202,90 @@
 
 <body>
 
-<header>
-  <h1>Ma Boutique</h1>
-  <p>Produits modernes, qualité premium et prix attractifs</p>
-</header>
+<div class="promo">
+  Vente lancée ! -25% sur tout le site avec le code PROMO25
+</div>
 
 <nav>
-  <a href="#accueil">Accueil</a>
-  <a href="#vetements">Vêtements</a>
-  <a href="#accessoires">Accessoires</a>
-  <a href="#electronique">Électronique</a>
+  <div class="logo">BOUT-S</div>
+  <a href="#nouveau">Nouveau</a>
+  <a href="#femmes">Femmes</a>
+  <a href="#hommes">Hommes</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="accueil">
-  <h2>Bienvenue</h2>
-  <p style="text-align:center;">
-    Bienvenue sur notre boutique en ligne. Découvrez nos produits classés par catégories.
-  </p>
-</section>
+<div class="hero">
+  <h1>BOUT-S</h1>
+  <p>À chacun le sien</p>
+</div>
 
-<section id="vetements">
-  <h2>Vêtements</h2>
+<div class="images-accueil">
+  <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b" alt="Mode femme">
+  <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234" alt="T-shirt">
+  <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Mode homme">
+</div>
 
-  <div class="produits">
-    <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>T-shirt Premium</h3>
-      <p>T-shirt confortable et moderne.</p>
-      <p class="prix">19,99 €</p>
-      <button>Commander</button>
-    </div>
-
-    <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>Sweat à capuche</h3>
-      <p>Sweat chaud et stylé.</p>
-      <p class="prix">39,99 €</p>
-      <button>Commander</button>
-    </div>
-  </div>
-</section>
-
-<section id="accessoires">
-  <h2>Accessoires</h2>
+<section id="nouveau">
+  <h2>Nouveau</h2>
 
   <div class="produits">
     <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>Casquette</h3>
-      <p>Casquette ajustable.</p>
-      <p class="prix">14,99 €</p>
-      <button>Commander</button>
-    </div>
-
-    <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>Sac moderne</h3>
-      <p>Sac pratique pour tous les jours.</p>
-      <p class="prix">29,99 €</p>
-      <button>Commander</button>
-    </div>
-  </div>
-</section>
-
-<section id="electronique">
-  <h2>Électronique</h2>
-
-  <div class="produits">
-    <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>Écouteurs Bluetooth</h3>
-      <p>Son clair et batterie longue durée.</p>
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="T-shirt">
+      <h3>T-shirt Oversize</h3>
+      <p>T-shirt moderne et confortable.</p>
       <p class="prix">24,99 €</p>
       <button>Commander</button>
     </div>
 
     <div class="produit">
-      <img src="https://via.placeholder.com/300x200" alt="Produit">
-      <h3>Chargeur rapide</h3>
-      <p>Charge rapide USB-C.</p>
-      <p class="prix">12,99 €</p>
+      <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7" alt="Sweat">
+      <h3>Sweat Premium</h3>
+      <p>Sweat chaud style streetwear.</p>
+      <p class="prix">44,99 €</p>
+      <button>Commander</button>
+    </div>
+  </div>
+</section>
+
+<section id="femmes">
+  <h2>Femmes</h2>
+
+  <div class="produits">
+    <div class="produit">
+      <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b" alt="Produit femme">
+      <h3>T-shirt Femme</h3>
+      <p>Coupe élégante et légère.</p>
+      <p class="prix">19,99 €</p>
+      <button>Commander</button>
+    </div>
+
+    <div class="produit">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Veste femme">
+      <h3>Veste Mode</h3>
+      <p>Look moderne et tendance.</p>
+      <p class="prix">59,99 €</p>
+      <button>Commander</button>
+    </div>
+  </div>
+</section>
+
+<section id="hommes">
+  <h2>Hommes</h2>
+
+  <div class="produits">
+    <div class="produit">
+      <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e" alt="Produit homme">
+      <h3>T-shirt Homme</h3>
+      <p>Style simple et efficace.</p>
+      <p class="prix">22,99 €</p>
+      <button>Commander</button>
+    </div>
+
+    <div class="produit">
+      <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c" alt="Hoodie">
+      <h3>Hoodie Noir</h3>
+      <p>Parfait pour un look streetwear.</p>
+      <p class="prix">49,99 €</p>
       <button>Commander</button>
     </div>
   </div>
@@ -263,7 +303,7 @@
 </section>
 
 <footer>
-  <p>© 2026 Ma Boutique - Tous droits réservés</p>
+  <p>© 2026 BOUT-S - Tous droits réservés</p>
 </footer>
 
 </body>
